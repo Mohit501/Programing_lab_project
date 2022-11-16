@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brain Stroke Detection</title>
+	<style type="text/css">
+		@media(min-width: 600px){
+		body
+		{
+			font-family: 'Open Sans'
+		}
+		#Bigcontainer
+		{
+			background-color: #F8F9F9;
+			display: grid;
+			grid-template-columns: 250px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+			font-size: 25px;
+			padding: 20px;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+	    }
+	    @media(max-width: 599px){
+	    body
+		{
+			font-family: 'Open Sans';
+			font-size: 15px;
+		}
+		#Bigcontainer
+		{
+			background-color: greenyellow;
+			display: grid;
+			grid-template-columns: 120px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+			
+		}
+	</style>
+</head>
+<body>
+	<div id ="Bigcontainer">
+	<div class="container1">
+
+		<p><a href="{{url_for('About')}}">About</a></p>
+		<p><a href="{{url_for('DataAnalysis')}}">Data Analysis</a></p>
+		<p><a href="{{url_for('ModelDevelopment')}}">Model Development</a></p>
+		<p><a href="{{url_for('PredictiveModel')}}">Predictive Model</a></p>
+	</div>
+	<div class="container2">
+		<h1><center>Brain Stroke Detection and Prevention</center></h1>
+
+		<h2> 1. What is Brain stroke? </h2>
+		<p id = "intro">A stroke occurs when a blood vessel in the brain ruptures and bleeds, or when there’s a blockage in the blood supply to the brain. The rupture or blockage prevents blood and oxygen from reaching the brain’s tissues.</p>
+
+		<h2>2. What are symptoms of brain stroke?</h2>
+		<p id="intro">Stroke symptoms can include:
+			<ol>
+			<li>Paralysis</li>
+            <li>Numbness or weakness in the arm, face, and leg, especially on one side of the body</li>
+            <li>Trouble speaking or understanding others</li>
+            <li>Slurred speech</li>
+            <li>Confusion, disorientation, or lack of responsiveness</li>
+            <li>Sudden behavioral changes, especially increased agitation</li>
+            <li>Vision problems, such as trouble seeing in one or both eyes with vision blackened or blurred, or double vision</li>
+            <li>Trouble walking</li>
+            <li>Loss of balance or coordination</li>
+            <li>Dizziness</li>
+            <li>Severe, sudden headache with an unknown cause</li>
+            <li>Seizures</li>
+            <li>Nausea or vomiting</li>
+            </ol>
+        </p>    
+
+        <h2>3.Possible Causes for stroke </h2>
+        <h3>A. Diet </h3>
+        <h3>B. Inactivity </h3>
+        <h3>C. Heavy Alcohol Intake </h3>
+        <h3>D. Use of Tobacco </h3>
+        <h3>E. Health History </h3>
+
+        <h2> How to Prevent Stroke?</h2>
+        <p id = "intro">Lifestyle changes can’t prevent all strokes. But many of these changes can make a radical difference when it comes to lowering your risk of stroke.
+
+        These changes include the following:
+        <ol>
+        	<li>Quit smoking. If you smoke, quitting now will lower your risk of stroke. You can reach out to your doctor to create a quit plan.</li>
+            <li>Limit alcohol use. Heavy alcohol consumption can raise your blood pressure, which in turn raises the risk of stroke. If reducing your intake is difficult, reach out to your doctor for help.</li>
+            <li>Keep a moderate weight. Overweight and obesity increases the risk of stroke. To help manage your weight, eat a balanced diet and stay physically active more often than not. Both steps can also reduce blood pressure and cholesterol levels.</li>
+            <li>Get regular checkups. Talk with your doctor about how often to get a checkup for blood pressure, cholesterol, and any conditions you may have. They can also support you in making these lifestyle changes and offer guidance.</li>
+        </ol>
+            Taking all these measures will help put you in better shape to prevent stroke.</p>
+
+
+
+	</div>
+
+</body>
+</html>

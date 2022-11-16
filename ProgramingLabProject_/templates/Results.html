@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brain Stroke Detection</title>
+
+	<style type="text/css">
+		@media(min-width: 600px){
+		body
+		{
+			font-family: 'Open Sans'
+		}
+		#Bigcontainer
+		{
+			background-color: #F8F9F9;
+			display: grid;
+			grid-template-columns: 250px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+			font-size: 25px;
+			padding: 20px;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+	    }
+	    @media(max-width: 599px){
+	    body
+		{
+			font-family: 'Open Sans';
+			font-size: 15px;
+		}
+		#Bigcontainer
+		{
+			background-color: greenyellow;
+			display: grid;
+			grid-template-columns: 120px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+			
+		}
+	</style>
+</head>
+<body>
+	<div id ="Bigcontainer">
+	<div class="container1">
+
+		<p><a href="{{url_for('About')}}">About</a></p>
+		<p><a href="{{url_for('DataAnalysis')}}">Data Analysis</a></p>
+		<p><a href="{{url_for('ModelDevelopment')}}">Model Development</a></p>
+		<p><a href="{{url_for('PredictiveModel')}}">Predictive Model</a></p>
+	</div>
+	<div class="container2">
+		<center>
+		<h1>Results</h1>
+		<div id = "results">
+		<table border="2">
+		
+	    {% for key,value in data.items()%}
+	    <tr>
+		<td>{{key}}</td>
+	    <td>{{value}}</td>
+        </tr>
+        {%endfor%}
+
+         </table>
+    	
+    	{% for key,value in prediction.items()%}
+	    <p id = "output">{{key}}:{{value}}(According to above mentioned values as input)</p>
+	    </center>
+ 
+    {%endfor%}
+    </div>
+			
+				
+
+
+	</div>
+
+</body>
+</html>

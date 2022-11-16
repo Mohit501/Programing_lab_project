@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brain Stroke Detection</title>
+	<style type="text/css">
+		@media(min-width: 600px){
+		body
+		{
+			font-family: 'Open Sans'
+		}
+		#Bigcontainer
+		{
+			background-color: #F8F9F9;
+			display: grid;
+			grid-template-columns: 250px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+			font-size: 25px;
+			padding: 20px;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		table
+		{
+			border-style: groove;
+			border-width: 5px;
+
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+	    }
+	    .val
+	    {
+	    	font-size: 20px;
+	    	width: 250px;
+	    	height: 70px;
+	    	text-align: center;
+	    }
+	    .num
+	    {
+	    	font-size: 18px;
+	    	
+	    	width: 150px;
+	    	height: 70px;
+	    }
+
+	    @media(max-width: 599px){
+	    body
+		{
+			font-family: 'Open Sans';
+			font-size: 15px;
+		}
+		#Bigcontainer
+		{
+			background-color: greenyellow;
+			display: grid;
+			grid-template-columns: 120px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+			
+		}
+	</style>
+</head>
+<body>
+	<div id ="Bigcontainer">
+	<div class="container1">
+
+		<p><a href="{{url_for('About')}}">About</a></p>
+		<p><a href="{{url_for('DataAnalysis')}}">Data Analysis</a></p>
+		<p><a href="{{url_for('ModelDevelopment')}}">Model Development</a></p>
+		<p><a href="{{url_for('PredictiveModel')}}">Predictive Model</a></p>
+	</div>
+	<div class="container2">
+		<center>
+		<h1>Predictive Model</h1>
+		<form method="POST" action="{{url_for('data_input')}}">
+			<table>
+			<tr>
+				<td class="val">Name: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="text" name="Name" id = "Name"></td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+		    </tr>
+			<tr>
+				<td class="val">Gender: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="Gender" id = "Male" value="1"> Male </td>
+				<td class="num"><input type="radio" name="Gender" id = "Female" value="0"> Female </td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td class="val">Age: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="text" name="Age" id = "Age"></td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td class="val">Hypertension: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="Hypertension" id = "Hypertension" value="1">Yes</td>
+				<td class="num"><input type="radio" name="Hypertension" id = "Hypertension" value="0">No</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td class="val">Heart Disease: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="HeartDisease" id = "HeartDisease" value="1">Yes</td>
+				<td class="num"><input type="radio" name="HeartDisease" id = "HeartDisease" value="0">No</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr>
+				<td class="val">Married: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="Married" id = "Married" value="1">Yes</td>
+				<td class="num"><input type="radio" name="Married" id = "Married" value="0">No</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+			</tr>
+				<td class="val">Work Type: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="WorkType" id = "WorkType" value="3">Private</td>
+				<td class="num"><input type="radio" name="WorkType" id = "WorkType" value="4">Self-Employed</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="num"><input type="radio" name="WorkType" id = "WorkType" value="1">Govt-Job</td>
+				<td class="num"><input type="radio" name="WorkType" id = "WorkType" value="0">Childeren</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="num"><input type="radio" name="WorkType" id = "WorkType" value="2">Not Working</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td class="val">Type of residence: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="radio" name="Residence" id = "Residence" value="1">Urban</td>
+				<td class="num"><input type="radio" name="Residence" id = "Residence" value="0">Rural</td>
+				<td>&nbsp</td>
+			</tr>
+
+			    <td class="val">Average Glucose level: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="text" name="AverageGlucoseLevel" id = "AverageGlucoseLevel"></td>
+				<td>&nbsp</td>
+			</tr>
+			</tr>
+			    <td class="val">BMI: </td>
+				<td>&nbsp</td>
+				<td class="num"><input type="text" name="BMI" id = "BMI"></td>
+				<td>&nbsp</td>
+			</tr>
+
+				<tr>
+
+				<td class = "submit" colspan="5"><input type="submit" name="submit" value="Predict"  style="width: 100%; text-align: center; height: 200%; font-size: 20px; color: blue;"></td>
+			   </tr>
+
+				
+			 </table>
+		</form>
+	</center>
+
+
+	</div>
+
+</body>
+</html>

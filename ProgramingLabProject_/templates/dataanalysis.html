@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DataAnalysis</title>
+	<style type="text/css">
+		@media(min-width: 600px){
+		body
+		{
+			font-family: 'Open Sans'
+		}
+		#Bigcontainer
+		{
+			background-color: #F8F9F9;
+			display: grid;
+			grid-template-columns: 250px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			font-size: 25px;
+			color: whitesmoke;
+			text-align: center;
+			padding: 20px;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+		#lnk
+		{
+			text-decoration: none;
+			color: cadetblue;
+		}
+		img
+		    {
+		    	height: 500px;
+		    	width: 1050px;
+		    }
+	    }
+	    @media(max-width: 599px){
+	    body
+		{
+			font-family: 'Open Sans';
+			font-size: 15px;
+		}
+		#Bigcontainer
+		{
+			background-color: greenyellow;
+			display: grid;
+			grid-template-columns: 120px auto
+		}
+		.container1
+		{
+			background-color: #17202A;
+			color: whitesmoke;
+			text-align: center;
+		}
+		.container2
+		{
+			padding: 25px;
+			
+		}
+		a
+		{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+			
+		}
+	</style>
+</head>
+<body>
+	<div id ="Bigcontainer">
+	<div class="container1">
+
+		<p><a href="{{url_for('About')}}">About</a></p>
+		<p><a href="{{url_for('DataAnalysis')}}">Data Analysis</a></p>
+	    <p><a href="{{url_for('ModelDevelopment')}}">Model Development</a></p>
+		<p><a href="{{url_for('PredictiveModel')}}">Predictive Model</a></p>
+	</div>
+	<div class="container2">
+		<h1><center>Data Analysis</center></h1>
+		<h2>1. Describing Data </h2>
+		<p> We have used the brain stroke detection dataset available on <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" id = "lnk"> Kaggle </a> The dataset contains 5110 observations with 11 attributes which are described below:</p>
+        <img src="{{url_for('static',filename='Screenshot 2022-10-30 at 1.12.59 PM.png')}}">
+        <h2>2. Correlation Plot </h2>
+        <p> Correlation plot gives the relation each variable has with other variables in the dataset. Given below is the correlation plot for our dataset</p>
+        <img src="{{url_for('static',filename='__results___15_1.png')}}">
+        <h2>3. Pairplot </h2>
+        <p> A pairplot plot a pairwise relationships in a dataset. The pairplot function creates a grid of Axes such that each variable in data will by shared in the y-axis across a single row and in the x-axis across a single column.</p>
+        <img src="{{url_for('static',filename='__results___17_2.png')}}">
+        <h2>4. Is Stroke gender specific? </h2>
+		<img src="{{url_for('static',filename='gender_vs_stroke_regplot.png')}}">
+		<p> The regression plot gives a striaght line indicating that no particular gender has more chances of stroke than other. Thus probablity of stroke is same for all genders </p>
+		<h2> 5. Does age play a role for stroke to happen?</h2>
+		<img src="{{url_for('static',filename='age_vs_stroke_regplot.png')}}">
+		<p> As age increases the chances of having a stroke increases </p>
+		<h2>6. Does Hypertension lead to strokes?</h2>
+		<img src="{{url_for('static',filename='hypertension_vs_stroke_regplot.png')}}">
+		<p> Having hyper tension increases the chances of having a stroke, lets try to gain more insights</p>
+		<img src="{{url_for('static',filename='stroke_prob_0.png')}}">
+		<img src="{{url_for('static',filename='stroke_prob_1.png')}}">
+		<p><li>There is <b> 3.96%</b> chance of having stroke when there is no hyper tension</li></P>
+        <p><li>There is <b> 13.25%</b> chance of having stroke when there is hyper tension</li></p>
+        <p><li>Thus having hyper tension increases the chance of having stroke by 9.29%</li></p>
+        <h2>7. Does Having heart disease affect the chances of stroke?</h2>
+		<img src="{{url_for('static',filename='heart_disease_vs_stroke_regplot.png')}}">
+        <p>Having Heart Disease increases the chances of having stroke</p>
+		<img src="{{url_for('static',filename='stroke_prob_2.png')}}">
+		<img src="{{url_for('static',filename='stroke_prob_3.png')}}">
+		<P><li>There is <b> 4.187%</b> chance of having stroke when there is no heart disease</li></P>
+		<p><li>There is <b> 17.02%</b> chance of having stroke when there is heart disease</li></p>
+		<b> Thus having heart disease increases the chance of having stroke by 12.832% </b>
+		<h2>8. Can ones job type affect chances of stroke?</h2>
+		<img src="{{url_for('static',filename='work_type_vs_stroke_regplot.png')}}">
+		<img src="{{url_for('static',filename='stroke_prob_4.png')}}">
+		<p><li>5.09% of people having private work type have stroke</li></p>
+        <p><li>7.93% of people having self-emplyed work type have stroke</li></p>
+        <p><li>0.29 % of people having children have stroke</li></p>
+        <p> <li>No records of people having never worked and having brain stroke </li></p>
+        <h2>9. Does average glucose level affect chances of brain stroke?</h2>
+		<img src="{{url_for('static',filename='stroke_prob5.png')}}">
+		<img src="{{url_for('static',filename='avg_glucose_vs_stroke_regplot.png')}}">
+		<p> From the above regression plot we can conclude that as average glucose level increases the chances of having stroke also increases</p>
+		<h2>10. Does BMI have a role to play for chances of having a stroke?</h2>
+		<img src="{{url_for('static',filename='stroke_prob_6.png')}}">
+		<img src="{{url_for('static',filename='bmi_vs_stroke_regplot.png')}}">
+		<p> As BMI increases chances of stroke tends to increase very slightly</p>
+		<h2>11. Does smoking have any effect on stroke?</h2>
+		<img src="{{url_for('static',filename='stroke_prob_7.png')}}">
+		<img src="{{url_for('static',filename='stroke_prob_8.png')}}">
+		<p> Smoking doesnt cause brain stroke but it does sure cause cancer</p>
+
+
+
+	</div>
+
+</body>
+</html>
